@@ -2,22 +2,25 @@
 
 .screen-saver-content {
     background: colors.$brand-primary-color
-        url('../../assets/images/bettingServices.png') no-repeat center center;
+        url('../../../assets/images/screen-saver-background.png') no-repeat
+        center center;
     background-size: cover;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
     flex: 1;
-    position: relative;
     transition: all 0.5s ease-in-out;
+    .home-cards-container {
+        margin-top: -6rem;
+        z-index: 1;
+    }
 
     .switch-screen-btn {
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
-        z-index: 10;
         height: 45%;
 
         &.full-screen-btn {
@@ -56,6 +59,9 @@
         width: 18rem;
         margin: 5rem 0;
         object-fit: contain;
+    }
+    .tickets-container {
+        margin-top: 180px;
     }
 }
 

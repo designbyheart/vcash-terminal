@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { NavigateFunction } from 'react-router-dom'
 
-import { logoWhite } from '@/assets/images'
+import { logoWhite, tickets } from '@/assets/images'
 import Container from '@/components/atoms/container/container'
 import PrimaryButton from '@/components/atoms/primaryButton/primaryButton'
 import Footer from '@/components/organisms/footer/footer'
@@ -21,7 +21,7 @@ export default function ScreenSaverTemplate({
     const [isAnimating, setIsAnimating] = useState(false)
     const { height } = useWindowSize()
     const { t } = useTranslation()
-    
+
     // Handle animation state when transitioning between modes
     useEffect(() => {
         if (isAnimating) {
@@ -43,6 +43,16 @@ export default function ScreenSaverTemplate({
                         <img src={logoWhite} alt="" />
                     </div>
                 )} */}
+                <div className="home-cards-container">
+                    <HomeCards
+                        isFullScreen={isFullSize}
+                        onTap={() => {
+                            setIsAnimating(true)
+                            setIsFullSize(!isFullSize)
+                        }}
+                        isAnimating={isAnimating}
+                    />
+                </div>
 
                 {!isFullSize && (
                     <div className="home-screen-title">
@@ -52,12 +62,16 @@ export default function ScreenSaverTemplate({
                         <h1> {t('home.title')}</h1>
                         <p>{t('home.body')}</p>
                         <PrimaryButton
-                            text={t('common.next')}
+                            text={t('home.buttonText')}
                             callback={() => navigate('/services')}
                             inverted={true}
                         />
                     </div>
                 )}
+                <div className="tickets-container">
+                    <img src={tickets} alt="" className="tickets-image" />
+                </div>
+
                 <button
                     className={`switch-screen-btn ${isFullSize ? 'full-screen-btn' : ''}`}
                     onClick={() => {
@@ -65,16 +79,8 @@ export default function ScreenSaverTemplate({
                         setIsFullSize(!isFullSize)
                     }}
                 />
-                <HomeCards
-                    isFullScreen={isFullSize}
-                    onTap={() => {
-                        setIsAnimating(true)
-                        setIsFullSize(!isFullSize)
-                    }}
-                    isAnimating={isAnimating}
-                />
             </div>
-            <Footer />
+            <Footer isWelcome={true} />
         </Container>
     )
 }

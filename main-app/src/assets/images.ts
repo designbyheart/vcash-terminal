@@ -30,6 +30,11 @@ import steam from './images/steam.png'
 import steamCard from './images/steamCard.png'
 import welcomeBackground from './images/welcomeBackground.svg'
 import xboxCard from './images/xboxCard.png'
+import nbaCard from './images/nbaCard.png'
+import footballCard from './images/footballCard.png'
+import tickets from './images/tickets.png'
+import tennisNewCard from './images/tennisNew.png'
+import casinoNewCard from './images/casinoNew.png'
 
 export {
     ageDisclaimerBackground,
@@ -37,7 +42,8 @@ export {
     bettingServices,
     cash,
     cashPayment,
-    casinoCard, casinoCard2,
+    casinoCard,
+    casinoCard2,
     creditCard,
     creditCardPayment,
     digitalServices,
@@ -62,5 +68,10 @@ export {
     steam,
     steamCard,
     welcomeBackground,
-    xboxCard
+    xboxCard,
+    nbaCard,
+    footballCard,
+    tickets,
+    tennisNewCard,
+    casinoNewCard
 }

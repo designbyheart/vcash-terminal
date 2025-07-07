@@ -1,22 +1,32 @@
-import { basketballCard, casinoCard, casinoCard2, f1Card, playstationCard, sockerCard, steamCard, xboxCard } from "@/assets/images"
+import {
+    playstationCard,
+    steamCard,
+    xboxCard,
+    footballCard,
+    nbaCard,
+    casinoNewCard,
+    tennisNewCard
+} from '@/assets/images'
 
-import { ProductCardType } from "./productCardType"
+import { ProductCardType } from './productCardType'
 
 export type HomeCardProps = {
     type: ProductCardType
     onClick: () => void
 }
 
-export default function HomeCard({ type = ProductCardType.socker, onClick }: HomeCardProps) {
+export default function HomeCard({
+    type = ProductCardType.socker,
+    onClick
+}: HomeCardProps) {
     const cardImages = {
-        [ProductCardType.socker]: sockerCard,
-        [ProductCardType.basketball]: basketballCard,
-        [ProductCardType.casino]: casinoCard,
-        [ProductCardType.casino2]: casinoCard2,
+        [ProductCardType.socker]: footballCard,
+        [ProductCardType.basketball]: nbaCard,
+        [ProductCardType.casino]: casinoNewCard,
         [ProductCardType.playstation]: playstationCard,
         [ProductCardType.xbox]: xboxCard,
         [ProductCardType.steam]: steamCard,
-        [ProductCardType.f1]: f1Card 
+        [ProductCardType.f1]: tennisNewCard
     }
 
     const cardImage = () => {
